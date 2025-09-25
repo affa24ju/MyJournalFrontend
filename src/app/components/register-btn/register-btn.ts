@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-register-btn',
@@ -8,8 +8,10 @@ import { Component } from '@angular/core';
 })
 export class RegisterBtn {
 
+  @Output() openRegister = new EventEmitter<void>();
+
   showRegister() {
     console.log("Register button clicked");
+    this.openRegister.emit();
   }
-
 }

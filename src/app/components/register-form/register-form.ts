@@ -14,5 +14,9 @@ export class RegisterForm {
     console.log("Close register form");
     this.close.emit();
   }
+  onSubmit() {
+    console.log("Form submitted");
+    this.close.emit();
+  }
 
 }

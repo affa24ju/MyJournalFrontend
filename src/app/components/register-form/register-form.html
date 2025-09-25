@@ -9,7 +9,7 @@
             Här kan du skapa ett konto för att börja använda din personliga dagbok. Vänligen fyll i dina uppgifter nedan för att registrera dig.
         </p>
 
-        <form>
+        <form (ngSubmit)="onSubmit()">
             <!-- Formulärfält, username-->
             <div>
                 <label for="username" class="block text-sm font-medium text-gray-700">Ditt namn</label>
