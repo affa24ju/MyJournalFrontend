@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-register-form',
@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './register-form.css'
 })
 export class RegisterForm {
+
+  @Output() close = new EventEmitter<void>();
+
+  closeForm() {
+    console.log("Close register form");
+    this.close.emit();
+  }
 
 }
