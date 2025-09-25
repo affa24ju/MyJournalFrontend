@@ -13,13 +13,13 @@
             <!-- Formulärfält, username-->
             <div>
                 <label for="username" class="block text-sm font-medium text-gray-700">Ditt namn</label>
-                <input type="text" name="username" placeholder="Användernamn" 
+                <input type="text" [(ngModel)]="username" name="username" placeholder="Användernamn" 
                     class="w-full border p-2 rounded mb-3" required>
             </div>
             <!-- Formulärfält, password-->
             <div>
                 <label for="password" class="block text-sm font-medium text-gray-700">Lösenord</label>
-                <input type="password"  name="password" placeholder="Lösenord" 
+                <input type="password" [(ngModel)]="password" name="password" placeholder="Lösenord" 
                     class="w-full border p-2 rounded mb-3" required>                
             </div>
 
