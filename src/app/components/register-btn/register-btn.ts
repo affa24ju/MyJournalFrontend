@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class RegisterBtn {
 
-  getRegister() {
+  showRegister() {
     console.log("Register button clicked");
   }
 
