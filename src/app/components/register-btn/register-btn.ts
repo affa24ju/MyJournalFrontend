@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class RegisterBtn {
 
+  getRegister() {
+    console.log("Register button clicked");
+  }
+
 }

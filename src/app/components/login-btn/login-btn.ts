@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class LoginBtn {
 
+  getLogin() {
+    console.log("Login button clicked");
+  }
+
 }
