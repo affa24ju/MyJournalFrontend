@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WelcomeText } from '../../welcome-text/welcome-text';
+import { WelcomeText } from '../welcome-text/welcome-text';
 
 @Component({
   selector: 'app-header',
