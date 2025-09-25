@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RegisterBtn } from '../register-btn/register-btn';
 
 @Component({
   selector: 'app-welcome-text',
-  imports: [],
+  imports: [RegisterBtn],
   templateUrl: './welcome-text.html',
   styleUrl: './welcome-text.css'
 })
