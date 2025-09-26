@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-login-btn',
@@ -8,8 +8,11 @@ import { Component } from '@angular/core';
 })
 export class LoginBtn {
 
-  getLogin() {
+  @Output() openLogin = new EventEmitter<void>();
+
+  showLogin() {
     console.log("Login button clicked");
+    this.openLogin.emit();
   }
 
 }

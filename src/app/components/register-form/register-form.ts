@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -14,8 +14,7 @@ export class RegisterForm {
   @Output() close = new EventEmitter<void>();
   @Output() register = new EventEmitter<{username: string, password: string}>();
 
-  @Input() 
-
+ 
   closeForm() {
     console.log("Close register form");
     this.close.emit();
