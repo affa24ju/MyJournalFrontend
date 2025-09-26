@@ -14,8 +14,7 @@ export class RegisterForm {
   @Output() close = new EventEmitter<void>();
   @Output() register = new EventEmitter<{username: string, password: string}>();
 
-  @Input() 
-
+ 
   closeForm() {
     console.log("Close register form");
     this.close.emit();

@@ -1,1 +1,29 @@
-<p>login-form works!</p>
+<!-- <p>login-form works!</p> -->
+ <div class="fixed inset-0 bg-green-300 bg-opacity-50 flex items-center justify-center">
+     <div class="bg-white rounded-xl shadow-lg p-8 w-96">
+        <!-- Rubrik till login form -->
+        <h2 class="text-2xl font-bold mb-4 text-center">Logga in</h2>
+        <!-- Beskrivningstext -->
+        <p class="mb-4 text-gray-600 text-center">
+                Välkommen tillbaka! Vänligen logga in med ditt användarnamn och lösenord för att fortsätta till din personliga dagbok.
+        </p>
+         <form (ngSubmit)="onSubmit()">
+            <!-- formulärfält, username -->
+            <div class="mb-4">
+                <label for="username" class="block text-gray-700">Användarnamn</label>
+                <input type="text" id="username" [(ngModel)]="username" name="username" required class="w-full px-3 py-2 border rounded">
+            </div>
+            <!-- Formulärfält, password -->
+            <div class="mb-6">
+                <label for="password" class="block text-gray-700">Lösenord</label>
+                <input type="password" id="password" [(ngModel)]="password" name="password" required class="w-full px-3 py-2 border rounded">
+            </div>
+            <!-- Knappar för att skicka eller avbryta -->
+            <div class="flex justify-end">
+                <button type="button" (click)="closeForm()" class="mr-4 px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500">Avbryt</button>
+                <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Logga in</button>
+            </div>
+         </form>
+     </div>
+
+ </div>
