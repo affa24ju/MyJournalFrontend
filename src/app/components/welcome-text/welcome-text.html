@@ -9,8 +9,14 @@
     <app-register-form (close)="showRegister = false"></app-register-form>
 }
 
-
 <!-- Knapp för att öppna login form -->
 <app-login-btn></app-login-btn>
+
+
+@if (showLogin) {
+    <app-login-form (close)="showLogin = false"></app-login-form>
+}
+
+
 
 
