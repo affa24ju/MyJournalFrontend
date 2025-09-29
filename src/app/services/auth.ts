@@ -26,4 +26,17 @@ export class Auth {
       localStorage.setItem('token', response.token);
     }));
   }
+
+  // Metod för användarinloggning
+  login(username: string, password: string): Observable<AuthResponse> {
+    return this.http.post<AuthResponse>(`${this.apiUrl}/login`, { username, password })
+    .pipe(tap(response => {
+      // Spara token i localStorage vid lyckad inloggning
+      localStorage.setItem('token', response.token);
+    }));
+  }
+  // Metod för att logga ut användaren
+  logout():void {
+    localStorage.removeItem('token');
+  }
 }
