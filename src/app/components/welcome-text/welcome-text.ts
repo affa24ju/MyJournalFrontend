@@ -9,7 +9,7 @@ import { Header } from '../header/header';
 
 @Component({
   selector: 'app-welcome-text',
-  imports: [RegisterBtn, LoginBtn, RegisterForm, LoginForm, Header],
+  imports: [RegisterBtn, LoginBtn, RegisterForm, LoginForm],
   templateUrl: './welcome-text.html',
   styleUrl: './welcome-text.css'
 })
