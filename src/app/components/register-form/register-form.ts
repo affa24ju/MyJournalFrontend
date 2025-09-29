@@ -26,7 +26,20 @@ export class RegisterForm {
   }
   onSubmit() {
     console.log("Form submitted");
-    this.register.emit({username: this.username, password: this.password});
-    this.close.emit();
+    // this.register.emit({username: this.username, password: this.password});
+    // this.close.emit();
+    this.auth.register(this.username, this.password).subscribe({
+      next: (response) => {
+        console.log("Registrering lyacades", response);
+        this.close.emit();
+        alert("Registrering lycades. Nu kan du logga in med ditt användarnamn och lösenord." );
+        // Navigera till startsidan efter registrering
+        this.router.navigate(['/']);
+      },
+      error: (error) => {
+        console.error("Registration failed", error);
+        alert("Registration failed: " + error.error.message);
+      }
+    });
   }
 }
