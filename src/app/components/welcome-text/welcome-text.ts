@@ -3,12 +3,13 @@ import { RegisterBtn } from '../register-btn/register-btn';
 import { LoginBtn } from '../login-btn/login-btn';
 import { RegisterForm } from '../register-form/register-form';
 import { LoginForm } from '../login-form/login-form';
+import { Header } from '../header/header';
 
 
 
 @Component({
   selector: 'app-welcome-text',
-  imports: [RegisterBtn, LoginBtn, RegisterForm, LoginForm],
+  imports: [RegisterBtn, LoginBtn, RegisterForm, LoginForm, Header],
   templateUrl: './welcome-text.html',
   styleUrl: './welcome-text.css'
 })
