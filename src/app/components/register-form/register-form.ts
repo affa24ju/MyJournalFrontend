@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Auth } from '../../services/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-form',
@@ -13,6 +15,9 @@ export class RegisterForm {
 
   @Output() close = new EventEmitter<void>();
   @Output() register = new EventEmitter<{username: string, password: string}>();
+
+  // Injecerar Auth service för registrering, och Router för navigering efter registrering
+  constructor(private auth: Auth, private router: Router) {}
 
  
   closeForm() {
