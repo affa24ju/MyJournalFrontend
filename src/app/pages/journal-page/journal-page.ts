@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { JournalForm } from '../../components/journal-form/journal-form';
 import { JournalList } from '../../components/journal-list/journal-list';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-journal-page',
@@ -9,5 +10,11 @@ import { JournalList } from '../../components/journal-list/journal-list';
   styleUrl: './journal-page.css'
 })
 export class JournalPage {
+
+  constructor(private router: Router) { }
+
+  goBack() {
+    this.router.navigate(['/']);
+  }
 
 }
