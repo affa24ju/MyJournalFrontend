@@ -13,7 +13,11 @@ export class JournalPage {
 
   constructor(private router: Router) { }
 
-  goBack() {
+  logOut() {
+    // Rensar token från localStorage
+    localStorage.removeItem('token');
+    
+    // Navigerar tillbaka till startsidan
     this.router.navigate(['/']);
   }
 
