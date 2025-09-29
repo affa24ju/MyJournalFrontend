@@ -1,20 +1,42 @@
 <!-- <p>welcome-text works!</p> -->
-<p class="mt-4 text-lg text-gray-700 max-w-md text-center">
-    Welcome to my personal journal where I document my thoughts, experiences, and reflections. This space is dedicated to capturing the moments that shape my life and the lessons I learn along the way.
-</p>
-<!-- Knapp för att öppna register form -->
-<app-register-btn (openRegister)="showRegister = true"></app-register-btn>
+<div class="bg-gradient-to-l from-green-300 to-amber-200 h-screen w-screen flex flex-col items-center justify-center">
 
-@if (showRegister) {
-    <app-register-form (close)="showRegister = false"></app-register-form>
-}
+    <h1 class="text-4xl font-bold text-blue-600 justify-evenly" >
+    My Journal
+    </h1>
+    <!-- <app-header></app-header> -->
+    <!-- <p>inne i div works</p> -->
+        <p class="mt-4 text-lg text-gray-700 max-w-md text-center">
+        Welcome to my personal journal where I document my thoughts, experiences, and reflections. This space is dedicated to capturing the moments that shape my life and the lessons I learn along the way.
+    </p>
+        <!-- Knappr -->
+     <div>
+        <!-- Knapp för att öppna register form -->
+        <app-register-btn (openRegister)="showRegister = true"></app-register-btn>
 
-<!-- Knapp för att öppna login form -->
-<app-login-btn (openLogin)="showLogin = true"></app-login-btn>
+        <!-- Knapp för att öppna login form -->
+        <app-login-btn (openLogin)="showLogin = true"></app-login-btn>
 
-@if (showLogin) {
-    <app-login-form (close)="showLogin = false"></app-login-form>
-}
+     </div>
+         <!-- Register form som popup -->
+    @if (showRegister) {
+        <app-register-form (close)="showRegister = false"></app-register-form>
+    }
+
+    <!-- Login form som popup -->
+    @if (showLogin) {
+        <app-login-form (close)="showLogin = false"></app-login-form>
+    } 
+
+</div>
+
+
+
+ 
+
+
+
+
 
 
 

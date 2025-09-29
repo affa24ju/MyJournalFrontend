@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -14,14 +15,20 @@ export class LoginForm {
   @Output() close = new EventEmitter<void>();
   @Output() login = new EventEmitter<{username: string, password: string}>();
 
+  // Injecerara Router för navigering efter inloggning
+  constructor(private router: Router) {}
+
   closeForm() {
     console.log("Close login form");
     this.close.emit();
   }
   onSubmit() {
-    console.log("Login form submitted");
+    console.log("Login form submitted", this.username, this.password);
+    // Skicka inloggningsdata till föräldrakomponenten
     this.login.emit({username: this.username, password: this.password});
     this.close.emit();
-  }
 
+    // Navigera till journal-sidan efter inloggning
+    this.router.navigate(['/journal']);
+  }
 }
