@@ -1,7 +1,8 @@
-<!-- <p>journal-list works!</p> -->
+<p>journal-history works!</p>
+
 
 <div class="bg-white rounded-xl shadow-2xl p-6">
-    <h2 class="text-xl font-bold mb-4">Dagens anteckningar</h2>
+    <h2 class="text-xl font-bold mb-4">Alla anteckningar</h2>
 
     <!-- Om det håller på att ladda -->
     <!-- <div *ngIf="loading" class="text-center text-gray-500">Laddar dina anteckningar...</div> -->
@@ -11,7 +12,7 @@
 
     <!-- Om inte finns någon anteckning -->
     @if (!loading && entries.length === 0) {
-        <div class="text-center text-gray-500">Inga anteckningar för idag. Skriv en ny ovan!</div>
+        <div class="text-center text-gray-500">Det finns inga anteckningar! Skriv en ny ovan!</div>
     }
 
     <!-- Lista av journal entries -->
@@ -33,5 +34,6 @@
      </ul>     
 
 </div>
+
 
 

@@ -34,4 +34,9 @@ export class JournlService {
     return this.http.get<JournalEntry[]>(`${this.apiUrl}/today`);
   }
 
+  // Metod för att hämta alla journal entries
+  getAllEntries(): Observable<JournalEntry[]> {
+    return this.http.get<JournalEntry[]>(`${this.apiUrl}/getAllEntries`);
+  }
+
 }

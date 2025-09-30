@@ -3,10 +3,11 @@ import { JournalForm } from '../../components/journal-form/journal-form';
 import { JournalList } from '../../components/journal-list/journal-list';
 import { Router } from '@angular/router';
 import { Auth } from '../../services/auth';
+import { JournalHistory } from '../../components/journal-history/journal-history';
 
 @Component({
   selector: 'app-journal-page',
-  imports: [JournalForm, JournalList],
+  imports: [JournalForm, JournalList, JournalHistory],
   templateUrl: './journal-page.html',
   styleUrl: './journal-page.css'
 })
