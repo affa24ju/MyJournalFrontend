@@ -9,7 +9,11 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
         Authorization: `Bearer ${token}`
       }
     });
-  
+    // För att se att interceptorn fungerar, loggar till konsolen
+    console.log('Auth Interceptor added token to request headers', req);
+  } else {
+    console.log('Auth Interceptor found no token in localStorage, proceeding without auth header');
+    
   }
   // Skickar vidare requesten
   return next(req);
