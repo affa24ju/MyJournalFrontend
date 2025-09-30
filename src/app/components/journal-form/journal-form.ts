@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { JournalEntryRequest, JournlService } from '../../services/journl-service';
 
@@ -11,6 +11,9 @@ import { JournalEntryRequest, JournlService } from '../../services/journl-servic
 export class JournalForm {
   note = '';
   feeling = 'GLAD'; // Default value
+
+  // Event som ska trigga när formuläret skickas in
+  @Output() entryCreated = new EventEmitter<void>();
 
   constructor(private journalService: JournlService) { }
 
@@ -35,6 +38,8 @@ export class JournalForm {
         // Rensar formuläret efter lyckad inlämning
         this.note = '';
         this.feeling = 'GLAD';
+        // Triggar event för att meddela föräldrakomponenten
+        this.entryCreated.emit();
         
       },
       error: (error) => {
