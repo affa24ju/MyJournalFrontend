@@ -27,7 +27,6 @@ export class JournlService {
   // Metod för att skapa en ny journal entry
   createEntry(request: JournalEntryRequest): Observable<JournalEntry> {
     return this.http.post<JournalEntry>(`${this.apiUrl}/createJournalEntry`, request);
-
   }
-  
+
 }
