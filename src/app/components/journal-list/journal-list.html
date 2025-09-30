@@ -22,7 +22,7 @@
                     <p class="text-gray-800">{{entry.note}}</p>
                     <div class="text-sm text-gray-500 mt-2 flex justify-between">
                         <span>Stämning: {{entry.feeling}}</span> | 
-                        <span>{{entry.createdAt | date:'shortTime'}}</span>
+                        <span>Skapat: {{entry.createdAt | date: "d MMMM y 'klockan:' HH:mm"}}</span>
 
                     </div>
 
