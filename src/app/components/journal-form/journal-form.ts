@@ -31,10 +31,11 @@ export class JournalForm {
     this.journalService.createEntry(request).subscribe({
       next: (entry) => {
         console.log("Journal entry created", entry);
+        alert("Din anteckning är sparad!");
         // Rensar formuläret efter lyckad inlämning
         this.note = '';
         this.feeling = 'GLAD';
-        alert("Din anteckning är sparad!");
+        
       },
       error: (error) => {
         console.error("Error creating journal entry", error);
