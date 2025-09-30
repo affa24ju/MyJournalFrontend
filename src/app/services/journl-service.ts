@@ -29,4 +29,9 @@ export class JournlService {
     return this.http.post<JournalEntry>(`${this.apiUrl}/createJournalEntry`, request);
   }
 
+  // Metod för att hämta dagens journal entries
+  getTodayEntries(): Observable<JournalEntry[]> {
+    return this.http.get<JournalEntry[]>(`${this.apiUrl}/today`);
+  }
+
 }

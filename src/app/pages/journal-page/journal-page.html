@@ -8,8 +8,11 @@
     <p class="mb-6 text-gray-700">Här kan du skriva in dina tankar och känslor för dagen. Att reflektera över hur du mår kan hjälpa dig att bättre förstå dig själv och dina behov.</p>
         
     <!-- Journal-form för att skapa en ny entry -->
-    <app-journal-form></app-journal-form>
+     <!-- Kopplar 'entryCreated' event journjal-list -->
+    <!-- När entryCreated triggar, anropar journalList.loadTodayEntries -->
+    <app-journal-form (entryCreated)="journalList.loadTodayEntries()"></app-journal-form>
 
     <!-- Journal-list: här visas dagens entries -->
-    <app-journal-list></app-journal-list>
+     <!-- #journalList: template referens till journal-list komponent -->
+    <app-journal-list #journalList></app-journal-list>
 </div>
