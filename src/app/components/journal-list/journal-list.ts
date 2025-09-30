@@ -21,7 +21,18 @@ export class JournalList implements OnInit {
 
   // Metod för att ladda dagens anteckningar
   loadTodayEntries() {
-    
+    this.journalService.getTodayEntries().subscribe({
+      next: (data) => {
+        this.entries = data;
+        this.loading = false;
+        console.log("Loaded today's journal entries", data);
+      },
+      error: (error) => {
+        console.error("Error loading today's journal entries", error);
+        this.loading = false;
+      }
+    });
+
   }
     
 
