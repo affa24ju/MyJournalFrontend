@@ -4,7 +4,33 @@
     <h2 class="text-xl font-bold mb-4">Dagens anteckningar</h2>
 
     <!-- Om det håller på att ladda -->
-    <div *ngIf="loading" class="text-center text-gray-500">Laddar dina anteckningar...</div>
+    <!-- <div *ngIf="loading" class="text-center text-gray-500">Laddar dina anteckningar...</div> -->
+    @if (loading) {
+        <div class="text-center text-gray-500">Laddar dina anteckningar...</div>
+    }
+
+    <!-- Om inte finns någon anteckning -->
+    @if (!loading && entries.length === 0) {
+        <div class="text-center text-gray-500">Inga anteckningar för idag. Skriv en ny ovan!</div>
+    }
+
+    <!-- Lista av journal entries -->
+     <ul class="space-y-4">
+        @if (entries.length > 0){
+            @for (entry of entries; track entry){
+                <li class="border rounded-lg p-4 shadow-sm">
+                    <p class="text-gray-800">{{entry.note}}</p>
+                    <div class="text-sm text-gray-500 mt-2 flex justify-between">
+                        <span>Stämning: {{entry.feeling}}</span> | 
+                        <span>{{entry.createdAt | date:'shortTime'}}</span>
+
+                    </div>
+
+                </li>
+            }
+        }
+
+     </ul>     
 
 </div>
 
