@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { JournalEntry, JournlService } from '../../services/journl-service';
+import { FeelingService } from '../../services/feeling-service';
 
 @Component({
   selector: 'app-journal-list',
@@ -13,7 +14,7 @@ export class JournalList implements OnInit {
   entries : JournalEntry[] = [];
   loading = true;
 
-  constructor(private journalService: JournlService) { }
+  constructor(private journalService: JournlService, private feelingService: FeelingService) { }
 
   ngOnInit() {
     this.loadTodayEntries();
@@ -34,7 +35,9 @@ export class JournalList implements OnInit {
     });
 
   }
+  // Emojis
+  getEmoji(feeling: any){
+    return this.feelingService.getEmoji(feeling);
+  }
     
-
-
 }

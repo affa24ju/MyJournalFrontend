@@ -1,4 +1,4 @@
-<p>statistics-page works!</p>
+<!-- <p>statistics-page works!</p> -->
 
 <div class="max-w-3xl mx-auto p-6 bg-amber-50 rounded-xl shadow-md">
     <h1 class="text-2xl font-bold mb-4">Din statistik</h1>
@@ -36,7 +36,7 @@
             <ul class="space-y-2">
                 @for (feeling of stats.feelingPercentages | keyvalue; track feeling.key) {
                     <li>
-                        {{ feeling.key }} : {{ formatPercent(feeling.value) }}
+                        {{ getEmoji(feeling.key) }} {{ feeling.key }} : {{ formatPercent(feeling.value) }}
                     </li>
                 }
 
