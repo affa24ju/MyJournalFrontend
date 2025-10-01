@@ -12,8 +12,8 @@ import { FeelingService } from '../../services/feeling-service';
   styleUrl: './statistics-page.css'
 })
 export class StatisticsPage {
-  startDate = '';
-  endDate = '';
+  startDate: string | null = null;
+  endDate: string | null = null;
   stats: any = null;
 
   constructor(private journalservice: JournlService, private feelingService: FeelingService) { }
