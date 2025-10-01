@@ -30,7 +30,17 @@
     @if (stats) {
         <div class="mt-6">
             <h2 class="text-xl font-semibold mb-2">Rsultat</h2>
-            <pre class="bg-gray-100 p-4 rounded">{{ stats | json }}</pre>
+            <!-- <pre class="bg-gray-100 p-4 rounded">{{ stats | json }}</pre> -->
+            <p class="text-gray-600 mb-4">Totalt antal inlägg: {{ stats.totalEntries }} </p>
+
+            <ul class="space-y-2">
+                @for (feeling of stats.feelingPercentages | keyvalue; track feeling.key) {
+                    <li>
+                        {{ feeling.key }} : {{ formatPercent(feeling.value) }}
+                    </li>
+                }
+
+            </ul>
 
         </div>
     }

@@ -36,4 +36,9 @@ export class StatisticsPage {
 
   }
 
+  // Formaterar procent 
+  formatPercent(value: any) : string {
+    return `${Math.round(value)}%`;
+  }
+
 }
