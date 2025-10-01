@@ -10,7 +10,7 @@
     <p class="mb-6 text-gray-700">Här kan du se statistik över hur du har mått under en vald period.</p>
 
     <!-- Formulär för att välja datum -->
-     <div class="flex gap-4 mb-6">
+    <div class="flex gap-4 mb-6">
         <div>
             <label for="startDate" class="block text-sm font-medium text-gray-700">Startdatum:</label>
             <input type="date" id="startDate" [(ngModel)]="startDate" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" />
@@ -19,5 +19,20 @@
             <label for="endDate" class="block text-sm font-medium text-gray-700">Slutdatum:</label>
             <input type="date" id="endDate" [(ngModel)]="endDate" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" />  
         </div>
+
+        <button (click)="loadStats()" class="self-end px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
+            Visa statistik
+
+        </button>
+    </div>
+
+    <!-- Visar resultat -->
+    @if (stats) {
+        <div class="mt-6">
+            <h2 class="text-xl font-semibold mb-2">Rsultat</h2>
+            <pre class="bg-gray-100 p-4 rounded">{{ stats | json }}</pre>
+
+        </div>
+    }
 
 </div>
