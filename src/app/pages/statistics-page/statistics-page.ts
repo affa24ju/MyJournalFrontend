@@ -3,6 +3,7 @@ import { JournlService } from '../../services/journl-service';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FeelingService } from '../../services/feeling-service';
 
 @Component({
   selector: 'app-statistics-page',
@@ -15,7 +16,7 @@ export class StatisticsPage {
   endDate = '';
   stats: any = null;
 
-  constructor(private journalservice: JournlService) { }
+  constructor(private journalservice: JournlService, private feelingService: FeelingService) { }
 
   loadStats(){
     if (!this.startDate || !this.endDate) {
@@ -39,6 +40,10 @@ export class StatisticsPage {
   // Formaterar procent 
   formatPercent(value: any) : string {
     return `${Math.round(value)}%`;
+  }
+  // Get emojis
+  getEmoji(feeling: any) {
+    return this.feelingService.getEmoji(feeling);
   }
 
 }

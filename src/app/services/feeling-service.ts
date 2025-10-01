@@ -20,7 +20,7 @@ export class FeelingService {
     HOPEFUL: '🤞'
   };
 
-  getEmoji(feeling: string): string {
+  getEmoji(feeling: any): string {
     return this.emojis[feeling] || '❓';
   }
   

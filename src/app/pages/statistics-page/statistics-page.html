@@ -36,7 +36,7 @@
             <ul class="space-y-2">
                 @for (feeling of stats.feelingPercentages | keyvalue; track feeling.key) {
                     <li>
-                        {{ feeling.key }} : {{ formatPercent(feeling.value) }}
+                        {{ getEmoji(feeling.key) }} {{ feeling.key }} : {{ formatPercent(feeling.value) }}
                     </li>
                 }
 
