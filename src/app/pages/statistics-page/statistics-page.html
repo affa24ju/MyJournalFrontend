@@ -44,4 +44,16 @@
         </div>
     }
 
+    <!-- Chart -->
+    <div class="max-w-xl mx-auto">
+        <h2 class="text-xl font-bold mb-4 mt-6">Statistik</h2>
+        <canvas baseChart
+            [data]="chartData"
+            [options]="chartOptions"
+            [type]="'pie'">
+
+        </canvas>
+
+    </div>
+
 </div>
