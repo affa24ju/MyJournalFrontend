@@ -38,5 +38,14 @@ export class JournlService {
   getAllEntries(): Observable<JournalEntry[]> {
     return this.http.get<JournalEntry[]>(`${this.apiUrl}/getAllEntries`);
   }
+  // Metod för att hämta statistik mellan två datum
+  getStats(startDate: string, endDate: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/getStats`, {
+      params: {
+        startDate,
+        endDate
+      }
+    });
+  }
 
 }
