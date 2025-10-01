@@ -6,5 +6,6 @@ import { StatisticsPage } from './pages/statistics-page/statistics-page';
 export const routes: Routes = [
     { path: '', component: WelcomeText },
     { path: 'journal', component: JournalPage},
-    { path: 'statistics', component: StatisticsPage} 
+    { path: 'statistics', component: StatisticsPage},
+    { path: 'journal', component: JournalPage}
 ];

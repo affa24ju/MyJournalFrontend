@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { JournlService } from '../../services/journl-service';
+import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-statistics-page',
-  imports: [],
+  imports: [FormsModule, RouterLink],
   templateUrl: './statistics-page.html',
   styleUrl: './statistics-page.css'
 })
