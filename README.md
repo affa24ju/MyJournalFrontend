@@ -1,59 +1,71 @@
 # MyJournalFrontend
+This is an Angular frontend application for mental health tracking and journalig. This application allows users to record their daily emotional state and visualize their mental health patterns over time. The application also has an API build with Spring boot and MongoDb database. 
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
+The project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
 
-## Development server
+## Features
+**Authentication**
+- User registration and login system
+- Secure authentication flow
 
+**Daily Journaling**
+- Record daily mental condition with text descriptions
+- Select emotions from an emoji dropdown
+- Save and manage daily entries
+
+**Organization & Views**
+- Today's entries: View all current day entries in a dedicated list
+- Previous entries: View all entries (including today's) in a seperate list
+
+**Analytics**
+- Date range statistics: Compare emotional pattern between two selected dates
+- Trend analysis: Track emotional changes over time
+- Visual analysis:
+  - Percentage breackdown of emotions (e.g. Glad: 40%, Sad:15%, Worried:20%...)
+  - Interactive pie chart
+ 
+## Architecture
+This is a frontend-only application built with
+- Angular
+- TypeScript
+
+## Backend Integration
+The application connects to a seperate backend service (https://github.com/affa24ju/MyJournalApi) built with:
+- *Spring Boot* (Java)
+- *MongoDB* database
+- REST API
+
+## Getting started
+**Prerequisites**
+These have to be installed:
+- npm manager
+- Node.js
+- Angular CLI
+
+## Installation
+**Clone the repository**
+```bash
+git clone https://github.com/affa24ju/MyJournalFrontend.git
+cd MyJournalFrontend 
+```
+
+**Install dependencies**
+```bash
+npm install
+```
+
+**Configure backend API**
+- Clone backend API
+- Make sure that backend is running
+
+**Run the application**
 To start a local development server, run:
 
 ```bash
 ng serve
 ```
+**Access the application**
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. 
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Good To Know
+- Language is swedish inside the application!
