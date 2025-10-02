@@ -25,6 +25,7 @@ export class JournlService {
   constructor(private http: HttpClient) { }
 
   // Metod för att skapa en ny journal entry
+  // Anropar /createJournalEntry endpoint med post request
   createEntry(request: JournalEntryRequest): Observable<JournalEntry> {
     return this.http.post<JournalEntry>(`${this.apiUrl}/createJournalEntry`, request);
   }

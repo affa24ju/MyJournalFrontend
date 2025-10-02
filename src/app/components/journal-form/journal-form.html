@@ -2,6 +2,7 @@
  <div class="bg-green-50 rounded-xl shadow-xl p-6 mb-6">
     <h2 class="text-xl font-bold mb-4">Skapa ny anteckning</h2>
 
+    <!-- Formulär för att skapa inlägg -->
     <form (ngSubmit)="onSubmit()">
         <!-- Textarea för journal entry -->
         <div class="mb-4">
@@ -30,7 +31,7 @@
             </select>
         </div>
 
-        <!-- Submit knapp -->
+        <!-- Submit knapp, för att spara inlägg -->
         <div class="text-right">
             <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50">
                 Spara

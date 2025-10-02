@@ -47,6 +47,7 @@ export class StatisticsPage {
       return;
     }
 
+    // Använder getStats() metoden från service
     this.journalservice.getStats(this.startDate, this.endDate).subscribe({
       next: (data) => {
         console.log('Statistik data:', data);      
@@ -56,7 +57,11 @@ export class StatisticsPage {
         const labels = Object.keys(data.feelingPercentages);
         const values = Object.values(data.feelingPercentages);
 
-        // Genererar slumpmässigt färg
+        // Genererar slumpmässigt hsl färg (hsl: Hue, Saturation, Lightness)
+        // labels.map: itererar igenom labes, callback funktion ignorerar actual value
+        // rturnerar en färg för varje label.
+        // Math.random: returnerar en siffra mellan 0 - 1, *360: får ett värde mellan 0-36 till Hue
+        // hsl(Hue, Statuaration, Lightness) = hsl(0-360,70%, 60%) 
         const colors = labels.map(() => `hsl(${Math.random() * 360}, 70%, 60%)`);
 
         this.chartData = {
@@ -77,11 +82,11 @@ export class StatisticsPage {
 
   }
 
-  // Formaterar procent 
+  // Formaterar procent, rundar av 
   formatPercent(value: any) : string {
     return `${Math.round(value)}%`;
   }
-  // Get emojis
+  // Metod för att vis emojis, via feelingService
   getEmoji(feeling: any) {
     return this.feelingService.getEmoji(feeling);
   }
