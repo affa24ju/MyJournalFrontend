@@ -1,5 +1,6 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 
+// Interceptor används för att lägga token i varje request
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   // Hämta token från localStorage och lägg till den i request headers om den finns
   const token = localStorage.getItem('token');

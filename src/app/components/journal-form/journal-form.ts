@@ -20,6 +20,7 @@ export class JournalForm {
   onSubmit() {
     console.log("Journal form submitted");
 
+    // Ger en alert om man inte skriver något
     if (this.note.trim() === '') {
       alert("Anteckningen är tom - skriv något!");
       console.log("Empty note - not submitting");      
